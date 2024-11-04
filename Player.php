@@ -13,9 +13,8 @@ class Player {
         $this->playerName = $playerName;
         $this->country = $country;
         $this->dateBirth = $dateBirth;
-        $this->carriere = [];
+        $this->carrieres = [];
     }
-
 
     // Getters
     public function getPlayerSurname(): string {
@@ -41,19 +40,24 @@ class Player {
         return $this->dateBirth;
     }
     public function setDateBirth(DateTime $dateBirth) {
+
         $this->dateBirth = $dateBirth;
     }
-    public function getCarriere(): array {
-        return $this->carriere;
+    public function getCarrieres(): array {
+
+        return $this->carrieres;
     }
-    public function setCarriere(array $carriere) {
-        $this->carriere = $carriere;
+
+    public function setCarrieres(array $carrieres) {
+
+        $this->carrieres = $carrieres;
+
     }
 
 
     // Method to add team and start year to career
-    public function addCareer(Club $club, int $startYear): void {
-        $this->carriere[] = ["club" => $club, "startYear" => $startYear];
+    public function addCareer(Carreer $carreer) {
+        $this->carrieres[] = $carreer;
     }
 
     // Method to calculate age
@@ -65,10 +69,11 @@ class Player {
     // Method to list career
     public function getCareer(): array {
         $careerDetails = [];
-        foreach ($this->carriere as $career) {
+        foreach ($this->carrieres as $career) {
             $careerDetails[] = [
-                'club' => $career["club"]->getClubName(),
-                'startYear' => $career["startYear"]
+                'club' => $career->getClub()->getClubName(),
+                'startYear' => $career->getAnneeDebut(),
+                'endYear' => $career->getAnneeFin()
             ];
         }
         return $careerDetails;

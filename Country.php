@@ -8,7 +8,7 @@ class Country {
     // Constructor
     public function __construct(string $countryName) {
         $this->countryName = $countryName;
-        $this ->players = $players = [];
+        $this ->players = [];
         $this->clubs = [] ;
 
     }
@@ -29,19 +29,19 @@ class Country {
         return $this->clubs;
 
     }
-    public function setClubs(array $club) {
+    public function setClubs(array $clubs) {
 
         $this->clubs = $clubs;
     }
 
-    public function getPlayer(): string {
+    public function getPlayers(): array {
 
-        return $this->player;
+        return $this->players;
     }
 
-    public function setPlayer(string $player) {
+    public function setPlayers(string $player) {
 
-        $this->player = $player;
+        $this->players = $player;
     }
 
         // Method to add a club to the country
@@ -63,7 +63,26 @@ class Country {
             return $clubNames;
         } 
 
-    // toString method
+        public function afficherClub(){
+            $clubName= $this->getClubNames();
+
+             $result="<div class=country>".  "<h2>".  $this->countryName. "</h2>"."</div>";
+            $result.= "<div class=nameClub >";
+            foreach($clubName as $clubName){
+                $result.= "<p>" .$clubName."</p>";
+            }   
+             $result.="</div>";
+             return $result;
+        }  
+   
+
+            //Ce tableau contient tout les nom de club du pays, 
+            // mtn il faut parcourir ce tableau et mettre chaque élément dans une div par exemple hotel
+            //$result.= ajouter div ouvre div .nom de lelement exemple $name.</div> 
+            // a chaque itération de la boucle ensuite on return le result tout a la fin de la boucle 
+            // la premiere ligne du résult c'est le nom du pays il faut mettre une balise titre 
+            //decommenter la derniere ligne d'index 
+           // toString method
     public function __toString(): string {
         
         return "Country: $this->countryName, Clubs: " ;

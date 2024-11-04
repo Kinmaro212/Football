@@ -41,27 +41,15 @@ class Club {
         $this->players = $players;
     }
 
-    public function getAnneeCreation(): array {
+    public function getAnneeCreation() {
         return $this->anneeCreation;
     }
 
-    public function setAnneeCreation(array $anneecreation) {
-        $this->anneeCreation = $annneCreation;
+    public function setAnneeCreation(array $anneeCreation) {
+        $this->anneeCreation = $anneeCreation;
     }
 
-    // Method to add a club to the country
-    public function addClub(Club $club) {
-        $this->clubs[] = $club;
-    }
 
-    // Method to list clubs in this country
-    public function getClubNames(): array {
-        $clubNames = [];
-        foreach ($this->clubs as $club) {
-            $clubNames[] = $club->getClubName();
-        }
-        return $clubNames;
-    } 
     
     // Method to add players with start year
     public function addPlayer(Player $player, int $startYear) {
@@ -78,11 +66,14 @@ class Club {
                 'name' => $player->getPlayerName(),
                 'surname' => $player->getPlayerSurname(),
                 'age' => $age,
-                'nationality' => $player->getNationality()
+                'country' => $player->getCountry()
             ];
         }
         return $playersDetails;
     }
+
+
+    
     // toString method
     public function __toString(): string {
         return "Club: {$this->clubName}, Country: {$this->country}, Players: " ;
