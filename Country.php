@@ -66,7 +66,7 @@ class Country {
         public function afficherClub(){
             $clubName= $this->getClubNames();
 
-             $result="<div class=country>".  "<h2>".  $this->countryName. "</h2>"."</div>";
+            $result="<div class=country>".  "<h2>".  $this->countryName. "</h2>"."</div>";
             $result.= "<div class=nameClub >";
             foreach($clubName as $clubName){
                 $result.= "<p>" .$clubName."</p>";

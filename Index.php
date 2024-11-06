@@ -48,28 +48,28 @@ $maestroCarreer1 = new carreer ($chelsea, "2020", $maestro7, "2023");
 $maestroCarreer2 = new carreer ($gala, "2023", $maestro7);
 
 // Ajout des carrières aux joueurs
-$neymar->addCareer($neymarCarreer1);
-$messi->addCareer($messiCarreer1);
-$messi->addCareer($messiCarreer2);
+// $neymar->addCareer($neymarCarreer1);
+// $messi->addCareer($messiCarreer1);
+// $messi->addCareer($messiCarreer2);
 
-// Ajout des club aux pays
-// $france->addClub($psg);
-// $france->addClub($OM);
-// $spain->addClub($barca);
-// $spain->addClub($RM);
-// $UK->addClub($MC);
-// $UK->addClub($MU);
+// // Ajout des club aux pays
+// // $france->addClub($psg);
+// // $france->addClub($OM);
+// // $spain->addClub($barca);
+// // $spain->addClub($RM);
+// // $UK->addClub($MC);
+// // $UK->addClub($MU);
 
-// Ajout des joueurs aux club
-$psg->addPlayer($neymar, 2017);
-$psg->addPlayer($messi, 2021);
-$barca->addPlayer($messi, 2004);
-
-
+// // Ajout des joueurs aux club
+// $psg->addPlayer($neymar, 2017);
+// $psg->addPlayer($messi, 2021);
+// $barca->addPlayer($messi, 2004);
 
 
 
- $psg->getPlayersDetails();
+
+
+
 
 
 // C'est une methode de la classe donc on appelle de cette manière 
@@ -78,7 +78,7 @@ $barca->addPlayer($messi, 2004);
 // Utilisation des méthodes pour obtenir les informations
 
 // Lister les club dans un pays
-$clubInFrance = $france->getClubNames(); // ["Paris Saint-Germain"]
+// $clubInFrance = $france->getClubNames(); // ["Paris Saint-Germain"]
 
 // Lister les joueurs dans une équipe avec leurs détails
 
@@ -104,6 +104,9 @@ echo $spain ->afficherClub();
 echo $UK ->afficherClub();
 echo $italia ->afficherClub();
 echo $turquie ->afficherClub();
+echo $psg->afficherPlayers();
+echo $RM->afficherPlayers();
+
 
 
 ?>
