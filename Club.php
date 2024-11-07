@@ -14,7 +14,7 @@ class Club {
         $this->country = $country;
         $this->anneeCreation = $anneeCreation;
         $this->players = [];
-        $country->addClub($this);
+        $country->addClub($this);                                                           //Quand je crée un club, le club est ajouter dans country
     }
 
    
@@ -51,15 +51,15 @@ class Club {
 
 
     
-    // // Method to add players with start year
-    // public function addPlayer(Player $player, int $startYear) {
-    //     $this->players[] = ["player" => $player, "startYear" => $startYear];
-    // }
+    // Method to add players with start year
+    public function addPlayer(Player $player, int $startYear) {
+        $this->players[] = ["player" => $player, "startYear" => $startYear];
+    }
 
         // Method to add team and start year to career
-        public function addPlayer( Player $player) {
-            $this->players[] = $player;
-        }
+        // public function addPlayer( Player $player) {
+        //     $this->players[] = $player;
+        // }
 
     // public function afficherClub(){
     //     $clubName= $this->getClubNames();
@@ -83,11 +83,14 @@ class Club {
         // Boucle pour ajouter chaque joueur avec son année de début
         $result="<div class=country>".  "<h2>".  $this->clubName. "</h2>"."</div>";
             $result.= "<div class=nameClub >";
-            foreach($this->players as $playerInfo){
-                $result.= "<p>" .$playerInfo."</p>";
+            
+            $result.= "<p>" .$this->getCountry().' '.$this->anneeCreation."</p></div> ";
+         
+            foreach($this->players as $p){
+                $player = $p["player"]; 
+                $date = $p["startYear"]; // On a acceder a un champs d'une case du tableaux de add player
+                $result.= "<div class=player>" .$player->getPlayerName().' '.$date. " </div> ";
             }   
-             $result.="</div>";
-             return $result;
         
         $result .= "</div>"; // Ferme la div principale de tous les joueurs
         

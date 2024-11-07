@@ -11,24 +11,22 @@ class carreer{
                 $this->anneeDebut = $anneeDebut;
                 $this->anneeFin = $anneeFin;
                 $this->player = $player;
+				$this->player->addCareer($this);
             }
 
 
 
 	public function  getClub() {
-
 		return $this->clubs;
 
 	}
 
 	public function  setClub(Club $clubs) {
-
 		$this->clubs = $clubs;
 
 	}
 
 	public function getAnneeDebut() {
-                
 		return $this->anneeDebut;
 
 	}
@@ -44,6 +42,8 @@ class carreer{
 	public function  setAnneeFin(string $anneeFin) {
 		$this->anneeFin = $anneeFin;
 	}
+
+
 
 }
        
