@@ -16,12 +16,12 @@ class carreer{
 
 
 
-	public function  getClub() {
+	public function  getClubs() {
 		return $this->clubs;
 
 	}
 
-	public function  setClub(Club $clubs) {
+	public function  setClubs(Club $clubs) {
 		$this->clubs = $clubs;
 
 	}

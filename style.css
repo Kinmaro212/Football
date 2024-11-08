@@ -1,12 +1,75 @@
-.container{
-display :flex;
+.uk-card{
+    width: 20%;
 }
 
-.footcountry{
-    display: block;
-    margin-left: 5em;
+
+
+
+.country{
+    margin-bottom: 2em;
+}
+/*============================container Index===================*/
+#containerCountry{
+    width: 100%;
+    display :flex;
+    gap: 30px;
+    padding: 5em;
 }
 
-.playerc{
+#containerClub{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /*La propriété CSS word-wrap permet de spécifier que le navigateur
+    peut rompre un mot afin d'éviter les débordements de l'élément.*/
+    gap: 30px;
+    padding-top: 10em;
+    padding: 5em;
+  
+    }
     
+#containerCarreer{
+    width: 100%;
+    display :flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 5em;
+ }
+/*============================container class CSS===================*/       
+
+h2{
+    color: white;
 }
+
+#containerCarreer .uk-card{
+    width: 300px;
+    height: 300px;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 10px;
+    gap: 30px;
+}
+
+#containerCountry .uk-card{
+    width: 300px;
+    height: 300px;
+    color: white;
+    background-color: rgb(14, 145, 7);
+    border-radius: 10px;
+    gap: 30px; 
+/*La propriété de gouttière CSS gap est un raccourci qui permet de spécifier à la fois l'espacement minimum qui sépare chaque ligne 
+et chaque colonne au sein de leur container Grid Css, Flex Css ou Multi-Columns Css.*/
+
+
+}
+
+#containerClub .uk-card{
+    width: 300px;
+    height: 300px;
+    color: white;
+    background-color: rgb(255, 0, 0);
+    border-radius: 10px;
+    gap: 30px;
+}
+
+

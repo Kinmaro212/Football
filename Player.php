@@ -71,7 +71,7 @@ class Player {
         $careerDetails = [];
         foreach ($this->carrieres as $career) {
             $careerDetails[] = [
-                'club' => $career->getClub()->getClubName(),
+                'club' => $career->getClubs()->getClubName(),
                 'anneeDebut' => $career->getAnneeDebut(),
                 'anneeFin' => $career->getAnneeFin()
             ];
@@ -80,23 +80,21 @@ class Player {
     }
 
 
-
     public function afficherCareer() {
-        // Afficher la carrière du joueur avec les informations de club et années
-$result= "<h2>".$this->getPlayerName()."</h2>
-        <p> ".$this->getCountry().' '.$this->getAge()." ans </p>" ;
-        foreach ($this->carrieres as $carreer){
 
-        $clubName = $carreer->getClub()->getClubName();
-        $startYear = $carreer->getAnneeDebut();
-        $endYear = $carreer->getAnneeFin() ;
-        $result.= "<div class= carrières>".$clubName." (".$startYear.")</div>";
-        } 
+
+        $result= "<div class ='uk-card uk-card-default uk-card-hover uk-card-body '>". "<h2>".  $this->playerName. "</h2>";
+        foreach($this->carrieres as $carreer){
+            $clubName = $carreer->getClubs()->getClubName();
+            $startYear = $carreer->getAnneeDebut();
+            $endYear = $carreer->getAnneeFin() ;
+
+            $result.= "<p>" .$clubName."</p>";
+        }
+        $result.="</div><br>";
         return $result;
-   
-    }
-
-
+        }    
+    
 
 
     public function __toString(): string {

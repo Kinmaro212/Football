@@ -56,32 +56,14 @@ class Club {
         $this->players[] = ["player" => $player, "startYear" => $startYear];
     }
 
-        // Method to add team and start year to career
-        // public function addPlayer( Player $player) {
-        //     $this->players[] = $player;
-        // }
-
-    // public function afficherClub(){
-    //     $clubName= $this->getClubNames();
-
-    //     $result="<div class=country>".  "<h2>".  $this->clubName. "</h2>"."</div>";
-    //     $result.= "<div class=nameClub >";
-    //     foreach($clubName as $clubName){
-    //         $result.= "<p>" .$clubName."</p>";
-    //     }   
-    //      $result.="</div>";
-    //      return $result;
-    // }  
-
 
 
     // Method to list players with name, age, and nationality
     public function afficherPlayers(): string {
         // Structure HTML de base pour le bloc des joueurs
-        $result = "<div class=country>".  "<h2>".  $this->clubName. "</h2>";
+        $result = "<div class ='uk-card uk-card-default uk-card-hover uk-card-body '>".  "<h2>".  $this->clubName. "</h2>";
         
         // Boucle pour ajouter chaque joueur avec son année de début
-        $result="<div class=country>".  "<h2>".  $this->clubName. "</h2>"."</div>";
             $result.= "<div class=nameClub >";
             
             $result.= "<p>" .$this->getCountry().' '.$this->anneeCreation."</p></div> ";

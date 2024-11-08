@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="style.css" />
   <title>FOOTBALL</title>
 </head>
-<body>
-<main>
-    <div class="container">
+<body>  
+
+  
 
 
 
@@ -43,7 +43,7 @@ $gala = new Club("Galatasaray", "1905", $turquie);
 $mbappe = new Player("Kylian", "Mbappé", "France", new DateTime("1998-12-20"));
 $messi = new Player("Lionel", "Messi", "Argentina", new DateTime("1987-06-24"));
 $ronaldo = new Player("Cristiano", "Ronaldo", "Portugal", new DateTime("1985-02-05"));
-$neymar = new Player("Neymar", "da Silva Santos Junior", "Brazil", new DateTime("1992-02-05"));
+$neymar = new Player("Junior", "Neymar", "Brazil", new DateTime("1992-02-05"));
 $rashford = new Player("Marcus", "Rashford", "United Kingdom", new DateTime("1997-10-31"));
 $maestro7 = new Player("Hakim", "Ziyech", "Morocco", new DateTime("1993-03-19"));
 
@@ -85,6 +85,11 @@ $ajax->addPlayer($maestro7, 2016);
 $chelsea->addPlayer($maestro7, 2020);
 $gala->addPlayer($maestro7, 2023);
 
+?>
+
+<div id='containerCountry'>
+
+<?php
 // Affichage des clubs par pays
 echo $france->afficherClub();
 echo $spain->afficherClub();
@@ -92,8 +97,15 @@ echo $uk->afficherClub();
 echo $italy->afficherClub().'<br><br><br>';
 
 
+?>
 
-// Affichage des joueurs par club
+</div>
+
+
+<div id='containerClub'>
+
+<?php
+
 echo $psg->afficherPlayers();
 echo $barca->afficherPlayers();
 echo $realMadrid->afficherPlayers();
@@ -102,8 +114,13 @@ echo $manUnited->afficherPlayers();
 echo $ajax->afficherPlayers();
 echo $chelsea->afficherPlayers();   
 echo $gala->afficherPlayers();   
+?>
 
+</div>
 
+<div id='containerCarreer'>
+
+<?php
 echo $mbappe->afficherCareer();
 echo $messi->afficherCareer();
 echo $ronaldo->afficherCareer();
@@ -111,10 +128,10 @@ echo $neymar->afficherCareer();
 echo $rashford->afficherCareer();
 echo $maestro7->afficherCareer();
 
-
 ?>
-    </div>
- </main>
+
+</div>
+
  <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/js/uikit.min.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/js/uikit-icons.min.js"></script>
  
