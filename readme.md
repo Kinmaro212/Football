@@ -26,3 +26,4 @@ Avant de commencer, assurez-vous d'avoir installé PHP et un serveur local comme
    
    ```bash
    git clone https://github.com/votre-compte/football-manager.git
+![alt text](image.png)
