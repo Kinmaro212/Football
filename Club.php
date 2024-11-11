@@ -1,5 +1,4 @@
 <?php
-
 class Club {
     private string $clubName;
     private string $anneeCreation;
@@ -7,84 +6,77 @@ class Club {
     private array $players;
     private array $carrieres;
 
-
-
-    public function __construct(string $clubName,string $anneeCreation , Country $country) {
+    // Constructeur : Initialise un club avec son nom, l'année de création, et son pays.
+    public function __construct(string $clubName, string $anneeCreation, Country $country) {
         $this->clubName = $clubName;
         $this->country = $country;
         $this->anneeCreation = $anneeCreation;
         $this->players = [];
-        $country->addClub($this);                                                           //Quand je crée un club, le club est ajouter dans country
+        $country->addClub($this);
     }
 
-   
-
-    // Getters
+    // Getter pour le nom du club
     public function getClubName(): string {
         return $this->clubName;
     }
-    // Setters
+
+    // Setter pour le nom du club
     public function setClubName(string $clubName) {
         $this->clubName = $clubName;
     }
+
+    // Getter pour le pays du club
     public function getCountry(): string {
         return $this->country;
     }
+
+    // Setter pour le pays du club
     public function setCountry(string $country) {
         $this->country = $country;
     }
+
+    // Getter pour la liste des joueurs du club
     public function getPlayers(): array {
         return $this->players;
     }
 
+    // Setter pour la liste des joueurs du club
     public function setPlayers(array $players) {
         $this->players = $players;
     }
 
+    // Getter pour l'année de création du club
     public function getAnneeCreation() {
         return $this->anneeCreation;
     }
 
+    // Setter pour l'année de création du club
     public function setAnneeCreation(array $anneeCreation) {
         $this->anneeCreation = $anneeCreation;
     }
 
-
-    
-    // Method to add players with start year
+    // Méthode pour ajouter un joueur à un club avec son année de début
     public function addPlayer(Player $player, int $startYear) {
         $this->players[] = ["player" => $player, "startYear" => $startYear];
     }
 
-
-
-    // Method to list players with name, age, and nationality
+    // Affichage des joueurs d'un club avec leurs détails dans une structure HTML
     public function afficherPlayers(): string {
-        // Structure HTML de base pour le bloc des joueurs
-        $result = "<div class ='uk-card uk-card-default uk-card-hover uk-card-body '>".  "<h2>".  $this->clubName. "</h2>";
-        
-        // Boucle pour ajouter chaque joueur avec son année de début
-            $result.= "<div class=nameClub >";
-            
-            $result.= "<p>" .$this->getCountry().' '.$this->anneeCreation."</p></div> ";
-         
-            foreach($this->players as $p){
-                $player = $p["player"]; 
-                $date = $p["startYear"]; // On a acceder a un champs d'une case du tableaux de add player
-                $result.= "<div class=player>" .$player->getPlayerName().' '.$date. " </div> ";
-            }   
-        
-        $result .= "</div>"; // Ferme la div principale de tous les joueurs
-        
+        $result = "<div class ='uk-card uk-card-default uk-card-hover uk-card-body '><h2>" . $this->clubName . "</h2>";
+        $result .= "<div class=nameClub >";
+        $result .= "<p>" . $this->getCountry() . ' ' . $this->anneeCreation . "</p></div> ";
+        foreach ($this->players as $p) {
+            $player = $p["player"];
+            $date = $p["startYear"];
+            $result .= "<div class=player>" . $player->getPlayerName() . ' ' . $date . " </div> ";
+        }
+        $result .= "</div>";
         return $result;
     }
 
-
-    
-    // toString method
+    // Méthode __toString pour représenter l'objet sous forme de chaîne
     public function __toString(): string {
-        return "Club: {$this->clubName}, Country: {$this->country}, Players: " ;
+        return "Club: {$this->clubName}, Country: {$this->country}, Players: ";
     }
 }
-
-
+?>
