@@ -20,9 +20,7 @@ Avant de commencer, assurez-vous d'avoir installé PHP et un serveur local comme
 - PHP 7.4 ou version supérieure
 - Serveur local (XAMPP, WAMP, Laragon, ou tout autre serveur compatible PHP)
 
-## Installation
 
-1. Clonez ou téléchargez le projet sur votre machine locale.
    
    ```bash
    git clone https://github.com/votre-compte/football-manager.git
