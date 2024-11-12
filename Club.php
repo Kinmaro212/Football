@@ -1,10 +1,10 @@
 <?php
 class Club {
-    private string $clubName;
-    private string $anneeCreation;
-    private Country $country;
-    private array $players;
-    private array $carrieres;
+    private string $clubName;            // Nom du club
+    private string $anneeCreation;       // Année de création du club
+    private Country $country;            // On appelle la classe club
+    private array $players;              // On appelle la classe club
+    private array $carrieres;            // On appelle la classe club
 
     // Constructeur : Initialise un club avec son nom, l'année de création, et son pays.
     public function __construct(string $clubName, string $anneeCreation, Country $country) {
@@ -15,42 +15,35 @@ class Club {
         $country->addClub($this);
     }
 
-    // Getter pour le nom du club
+    // Getters et setters pour accéder et modifier les propriétés du club
     public function getClubName(): string {
         return $this->clubName;
     }
 
-    // Setter pour le nom du club
     public function setClubName(string $clubName) {
         $this->clubName = $clubName;
     }
 
-    // Getter pour le pays du club
     public function getCountry(): string {
         return $this->country;
     }
 
-    // Setter pour le pays du club
     public function setCountry(string $country) {
         $this->country = $country;
     }
 
-    // Getter pour la liste des joueurs du club
     public function getPlayers(): array {
         return $this->players;
     }
 
-    // Setter pour la liste des joueurs du club
     public function setPlayers(array $players) {
         $this->players = $players;
     }
 
-    // Getter pour l'année de création du club
     public function getAnneeCreation() {
         return $this->anneeCreation;
     }
 
-    // Setter pour l'année de création du club
     public function setAnneeCreation(array $anneeCreation) {
         $this->anneeCreation = $anneeCreation;
     }

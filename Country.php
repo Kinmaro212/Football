@@ -1,6 +1,6 @@
 <?php
 class Country {
-    private string $countryName;
+    private string $countryName; 
     private array $players;
     private array $clubs;
 
@@ -11,32 +11,27 @@ class Country {
         $this->clubs = [];
     }
 
-    // Getter pour le nom du pays
+    // Getters et setters pour accéder et modifier les propriétés du pays
     public function getCountryName(): string {
         return $this->countryName;
     }
 
-    // Setter pour le nom du pays
     public function setCountryName(string $countryName) {
         $this->countryName = $countryName;
     }
 
-    // Getter pour la liste des clubs
     public function getClubs(): array {
         return $this->clubs;
     }
 
-    // Setter pour la liste des clubs
     public function setClubs(array $clubs) {
         $this->clubs = $clubs;
     }
 
-    // Getter pour la liste des joueurs
     public function getPlayers(): array {
         return $this->players;
     }
 
-    // Setter pour la liste des joueurs
     public function setPlayers(string $player) {
         $this->players = $player;
     }
