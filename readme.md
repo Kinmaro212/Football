@@ -1,4 +1,4 @@
-# Football Manager - Project
+# Football - Project
 
 ## Description
 
