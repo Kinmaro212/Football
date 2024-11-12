@@ -11,16 +11,6 @@ Ce projet est une application de gestion de carrière pour un joueur de football
 - Gestion des carrières : gestion des carrières des joueurs (année de début, année de fin).
 - Affichage dynamique des clubs, des joueurs et des carrières via des méthodes d'affichage personnalisées.
 
-## Prérequis
-
-Avant de commencer, assurez-vous d'avoir installé PHP et un serveur local comme XAMPP, WAMP ou Laragon pour exécuter le code. Ce projet est conçu pour être utilisé avec PHP 7.4 ou une version supérieure.
-
-### Prérequis :
-
-- PHP 7.4 ou version supérieure
-- Serveur local (XAMPP, WAMP, Laragon, ou tout autre serveur compatible PHP)
-
-
    
    ```bash
    git clone https://github.com/votre-compte/football-manager.git
